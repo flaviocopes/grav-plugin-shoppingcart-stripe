@@ -1,6 +1,6 @@
 {
-    "name": "flaviocopes/grav-plugin-shoppingcart-pro",
-    "description": "PayPal Plugin for Grav Shopping Cart",
+    "name": "flaviocopes/grav-plugin-shoppingcart-stripe",
+    "description": "Stripe Plugin for Grav Shopping Cart",
     "license": "MIT",
     "authors": [
         {

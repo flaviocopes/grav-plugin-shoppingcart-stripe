@@ -1,0 +1,55 @@
+name: Shopping Cart Plugin Stripe
+version: 1.0.0
+description: "Add Stripe checkout to the Grav Shopping Cart Plugin"
+icon: shopping-cart
+author:
+  name: Flavio Copes
+  email: copesc@gmail.com
+  url: http://flaviocopes.com
+homepage: http://gravshoppingcart.com
+keywords: shoppingcart, ecommerce, e-commerce, plugin, shop, cart, stripe
+readme: https://github.com/flaviocopes/grav-plugin-shoppingcart/blob/develop/README.md
+bugs: https://github.com/flaviocopes/grav-plugin-shoppingcart/issues
+license: MIT
+
+form:
+  validation: loose
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    payment.methods.stripe.name:
+      type: hidden
+      default: 'Stripe'
+
+    payment.methods.stripe.description:
+      type: text
+      default: ''
+      label: Payment Description
+      size: medium
+      placeholder: An optional description appearing in the payment popup
+      help: An optional description appearing in the payment popup
+
+    payment.methods.stripe.secretKey:
+      type: text
+      default: ''
+      label: Stripe Secret Key
+      size: medium
+      placeholder: The Stripe Secret Key
+      help: The Stripe Secret Key
+
+    payment.methods.stripe.publicKey:
+      type: text
+      default: ''
+      label: Stripe Public Key
+      size: medium
+      placeholder: The Stripe Public Key
+      help: The Stripe Public Key

@@ -4,6 +4,5 @@ payment:
         stripe:
             name: 'Stripe'
             description: 'Test description' # The description appearing in the payment popup
-            enabled: true
             secretKey: '' # Add your own secret key
             publicKey: '' # Add your own public key
