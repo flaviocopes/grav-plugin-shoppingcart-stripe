@@ -26,6 +26,7 @@ class ShoppingcartStripePlugin extends Plugin
     public function onTwigSiteVariables()
     {
         $this->grav['assets']->addJs('plugin://' . $this->plugin_name . '/gateways/stripe/script.js');
+        $this->grav['assets']->addJs('https://checkout.stripe.com/checkout.js');
     }
 
     /**
