@@ -2,9 +2,11 @@
 namespace Grav\Plugin;
 
 use Grav\Common\Plugin;
-use Grav\Common\Uri;
-use RocketTheme\Toolbox\Event\Event;
 
+/**
+ * Class ShoppingcartStripePlugin
+ * @package Grav\Plugin
+ */
 class ShoppingcartStripePlugin extends Plugin
 {
     protected $plugin_name = 'shoppingcart-stripe';

@@ -1,24 +1,30 @@
 <?php
 namespace Grav\Plugin;
 
-use Grav\Common\Plugin;
-use Grav\Common\Grav;
 use RocketTheme\Toolbox\Event\Event;
 use Omnipay\Omnipay;
 
 $path = realpath(__DIR__ . '/../../classes/gateway.php');
 require_once($path);
 
+/**
+ * Class ShoppingCartGatewayStripe
+ * @package Grav\Plugin
+ */
 class ShoppingCartGatewayStripe extends ShoppingCartGateway
 {
     protected $name = 'stripe';
 
     /**
      * Handle paying via this gateway
+     *
+     * @param Event $event
+     *
+     * @return mixed|void
      */
     public function onShoppingCartPay(Event $event)
     {
-        if (!$this->isCurrentGateway($event['gateway'])) { return; }
+        if (!$this->isCurrentGateway($event['gateway'])) { return false; }
 
         $order = $this->getOrderFromEvent($event);
 
