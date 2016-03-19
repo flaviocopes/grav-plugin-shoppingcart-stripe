@@ -38,10 +38,11 @@ class ShoppingcartStripePlugin extends Plugin
     {
         require_once __DIR__ . '/vendor/autoload.php';
 
-        $this->config->set('plugins.shoppingcart', array_replace_recursive($this->config->get('plugins.shoppingcart'), $this->config->get('plugins.shoppingcart-stripe')));
-
         if (!$this->isAdmin()) {
             // Site
+
+            $this->config->set('plugins.shoppingcart', array_replace_recursive($this->config->get('plugins.shoppingcart'), $this->config->get('plugins.shoppingcart-stripe')));
+
             $this->enable([
                 'onTwigSiteVariables'          => ['onTwigSiteVariables', 0],
                 'onShoppingCartPay'            => ['onShoppingCartPay', 0],
