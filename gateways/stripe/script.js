@@ -18,7 +18,7 @@
                 token: function(token, args) {
                     var order = {
                         products: storejs.get('grav-shoppingcart-basket-data'),
-                        address: storejs.get('grav-shoppingcart-person-address'),
+                        data: storejs.get('grav-shoppingcart-checkout-form-data'),
                         shipping: storejs.get('grav-shoppingcart-shipping-method'),
                         payment: 'stripe',
                         token: storejs.get('grav-shoppingcart-order-token').token,
@@ -29,7 +29,7 @@
 
 
                     jQuery.ajax({
-                        url: ShoppingCart.settings.baseURL + ShoppingCart.settings.urls.saveOrderURL + '?task=pay',
+                        url: ShoppingCart.settings.baseURL + ShoppingCart.settings.urls.save_order_url + '?task=pay',
                         data: order,
                         type: 'POST'
                     })
@@ -46,7 +46,7 @@
             stripeHandler.open({
                 name: ShoppingCart.settings.payment.methods.stripe.name,
                 description: ShoppingCart.settings.payment.methods.stripe.description,
-                email: storejs.get('grav-shoppingcart-person-address').email,
+                email: storejs.get('grav-shoppingcart-checkout-form-data').email,
                 amount: ShoppingCart.calculateTotalPriceIncludingTaxesAndShipping().toString().replace('.', ''),
                 currency: ShoppingCart.settings.general.currency
             });
