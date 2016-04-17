@@ -1,14 +1,14 @@
 <?php
-namespace Grav\Plugin;
+namespace Grav\Plugin\ShoppingCart;
 
 use RocketTheme\Toolbox\Event\Event;
 use Omnipay\Omnipay;
 
 /**
- * Class ShoppingCartGatewayStripe
- * @package Grav\Plugin
+ * Class GatewayStripe
+ * @package Grav\Plugin\ShoppingCart
  */
-class ShoppingCartGatewayStripe extends ShoppingCartGateway
+class GatewayStripe extends Gateway
 {
     protected $name = 'stripe';
 
@@ -16,6 +16,9 @@ class ShoppingCartGatewayStripe extends ShoppingCartGateway
      * Handle paying via this gateway
      *
      * @param Event $event
+     *
+     * @event onShoppingCartSaveOrder signal to save the order
+     * @event onShoppingCartReturnOrderPageUrlForAjax signal to return the order page and exit, for AJAX processing
      *
      * @return mixed|void
      */
