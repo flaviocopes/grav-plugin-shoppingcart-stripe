@@ -46,7 +46,7 @@ form:
       default: ''
       label: Stripe Secret Key
       size: medium
-      placeholder: The Stripe Secret Key
+      placeholder: ENTER YOUR STRIPE SECRET KEY
       help: The Stripe Secret Key
 
     payment.methods.stripe.publicKey:
@@ -54,5 +54,5 @@ form:
       default: ''
       label: Stripe Public Key
       size: medium
-      placeholder: The Stripe Public Key
+      placeholder: ENTER YOUR STRIPE PUBLIC KEY
       help: The Stripe Public Key
