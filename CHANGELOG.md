@@ -1,3 +1,9 @@
+# v1.0.4
+## 21-04-2016
+
+1. [](#bugfix)
+    * Fix the dependencies format
+
 # v1.0.3
 ## 21-04-2016
 
