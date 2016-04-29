@@ -1,5 +1,5 @@
 name: Shopping Cart Stripe Addon
-version: 1.0.4
+version: 1.0.5
 description: "Add Stripe checkout to the Grav Shopping Cart Plugin"
 icon: shopping-cart
 author:
