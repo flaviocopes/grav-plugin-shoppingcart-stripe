@@ -4,9 +4,6 @@ namespace Grav\Plugin;
 use RocketTheme\Toolbox\Event\Event;
 use Omnipay\Omnipay;
 
-$path = realpath(__DIR__ . '/../../classes/gateway.php');
-require_once($path);
-
 /**
  * Class ShoppingCartGatewayStripe
  * @package Grav\Plugin
