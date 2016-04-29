@@ -1,3 +1,9 @@
+# v1.0.5
+## 28-04-2016
+
+1. [](#bugfix)
+    * Fix issue with gateway class include if not symlinked
+
 # v1.0.4
 ## 21-04-2016
 
