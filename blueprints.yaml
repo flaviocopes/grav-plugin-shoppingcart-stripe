@@ -1,16 +1,18 @@
 name: Shopping Cart Stripe Addon
-version: 1.0.5
+version: 1.1.0-beta.2
 description: "Add Stripe checkout to the Grav Shopping Cart Plugin"
 icon: shopping-cart
 author:
   name: Flavio Copes
   email: copesc@gmail.com
-  url: http://flaviocopes.com
-homepage: http://gravshoppingcart.com
+  url: https://flaviocopes.com
+homepage: https://gravcart.com
 keywords: shoppingcart, ecommerce, e-commerce, plugin, shop, cart, stripe
-readme: https://gravshoppingcart.com/docs
+readme: https://gravcart.com/docs
 bugs: https://github.com/flaviocopes/grav-plugin-shoppingcart/issues
 license: MIT
+
+testing: true
 
 dependencies:
   - { name: shoppingcart, version: '~1.1' }
