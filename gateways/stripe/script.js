@@ -10,9 +10,8 @@
                 return;
             }
 
-            /***********************************************************/
-            /* Configure Stripe
-            /***********************************************************/
+            var amount = parseInt(ShoppingCart.calculateTotalPriceIncludingTaxesAndShipping().toString().replace('.', ''));
+
             var stripeHandler = StripeCheckout.configure({
                 key: ShoppingCart.settings.payment.methods.stripe.publicKey,
                 token: function(token, args) {
@@ -23,10 +22,9 @@
                         payment: 'stripe',
                         token: storejs.get('grav-shoppingcart-order-token').token,
                         extra: { 'stripeToken': token.id },
-                        amount: ShoppingCart.totalOrderPrice.toString(),
+                        amount: amount,
                         gateway: ShoppingCart.gateway
                     };
-
 
                     jQuery.ajax({
                         url: ShoppingCart.settings.baseURL + ShoppingCart.settings.urls.save_order_url + '/task:pay',
@@ -47,7 +45,7 @@
                 name: ShoppingCart.settings.payment.methods.stripe.name,
                 description: ShoppingCart.settings.payment.methods.stripe.description,
                 email: storejs.get('grav-shoppingcart-checkout-form-data').email,
-                amount: ShoppingCart.calculateTotalPriceIncludingTaxesAndShipping().toString().replace('.', ''),
+                amount: amount,
                 currency: ShoppingCart.settings.general.currency
             });
         });
