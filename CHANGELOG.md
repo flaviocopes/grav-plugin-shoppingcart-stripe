@@ -1,3 +1,10 @@
+# v1.1.0-beta.3
+## 09-08-2016
+
+1. [](#bugfix)
+    * Fix issue with Stripe amount format
+    * Fix issue in `enabled` state conflicting with main plugin
+
 # v1.1.0-beta.2
 ## 30-04-2016
 
