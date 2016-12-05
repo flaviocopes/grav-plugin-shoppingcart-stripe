@@ -32,6 +32,15 @@ class ShoppingcartStripePlugin extends Plugin
     }
 
     /**
+     */
+    public function mergeShoppingCartPluginConfig()
+    {
+        $config = $this->config->get('plugins.' . $this->plugin_name);
+        unset($config['enabled']);
+        $this->config->set('plugins.shoppingcart', array_replace_recursive($this->config->get('plugins.shoppingcart'), $config));
+    }
+
+    /**
      * Enable search only if url matches to the configuration.
      */
     public function onPluginsInitialized()
@@ -39,10 +48,7 @@ class ShoppingcartStripePlugin extends Plugin
         require_once __DIR__ . '/vendor/autoload.php';
 
         if (!$this->isAdmin()) {
-            // Site
-
-            $this->config->set('plugins.shoppingcart', array_replace_recursive($this->config->get('plugins.shoppingcart'), $this->config->get('plugins.shoppingcart-stripe')));
-
+            $this->mergeShoppingCartPluginConfig();
             $this->enable([
                 'onTwigSiteVariables'          => ['onTwigSiteVariables', 0],
                 'onShoppingCartPay'            => ['onShoppingCartPay', 0],
@@ -70,7 +76,7 @@ class ShoppingcartStripePlugin extends Plugin
         if (!$this->gateway) {
             $this->requireGateway();
             require_once __DIR__ . '/gateways/stripe/gateway.php';
-            $this->gateway = new ShoppingCartGatewayStripe();
+            $this->gateway = new ShoppingCart\GatewayStripe();
         }
 
         return $this->gateway;
