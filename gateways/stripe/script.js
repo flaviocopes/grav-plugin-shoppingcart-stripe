@@ -14,6 +14,7 @@
 
             var stripeHandler = StripeCheckout.configure({
                 key: ShoppingCart.settings.payment.methods.stripe.publicKey,
+                locale: 'auto',
                 token: function(token, args) {
                     var order = {
                         products: storejs.get('grav-shoppingcart-basket-data'),
